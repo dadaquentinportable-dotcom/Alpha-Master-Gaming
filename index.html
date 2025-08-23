@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Master Gaming® | Structure Officielle</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #00ff99;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00ff99;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      margin: 0 0.5rem;
+      color: #00ff99;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Alpha Master Gaming®</h1>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#team">Bureau</a>
+      <a href="#events">Événements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Nous sommes une structure eSport passionnée, dédiée à la compétition et à la communauté. Notre objectif est de représenter l'excellence et de promouvoir l'esport auprès de tous.</p>
+  </section>
+
+  <section id="team">
+    <h2>Notre Bureau</h2>
+    <div class="team-grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="Joueur 1">
+        <h3>Joueur 1</h3>
+        <p>Rôle / Jeu</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="Joueur 2">
+        <h3>Joueur 2</h3>
+        <p>Rôle / Jeu</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="Joueur 3">
+        <h3>Joueur 3</h3>
+        <p>Rôle / Jeu</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <h2>Événements</h2>
+    <p>Retrouvez ici nos prochains tournois et résultats :</p>
+    <ul>
+      <li>📅 12/09/2025 - Tournoi WZ</li>
+      <li>📅 20/09/2025 - Tournoi BO6</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Rejoignez-nous sur nos réseaux :</p>
+    <p>
+      <a href="#">Twitter</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Discord</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024-2025 - by DADA. © Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
