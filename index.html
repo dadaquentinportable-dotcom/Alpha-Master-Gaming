@@ -48,16 +48,18 @@
 
 
   <!-- Script menu responsive -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'flex';
-      }
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      menu.classList.add('flex');
+    } else {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
     }
-  </script>
+  }
+</script>
 </head>
 
 <body class="bg-gray-950 text-gray-100 font-sans">
@@ -69,20 +71,21 @@
       <p class="mt-2 text-lg md:text-2xl font-light">Structure Officielle eSport</p>
       <p class="mt-2 text-yellow-200 italic font-semibold">La passion, la compétition, l’excellence</p>
 
-      <div class="menu-toggle mt-4" onclick="toggleMenu()">
+      <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </div>
-
-      <nav id="menu" class="menu mt-6 space-x-6 flex justify-center">
-        <a href="#à-propos-de-nous" class="hover:text-black font-semibold">À propos</a>
-        <a href="#bureau" class="hover:text-black font-semibold">Bureau</a>
-        <a href="#collaborateurs" class="hover:text-black font-semibold">Collaborateurs</a>
-        <a href="#nous-contacter" class="hover:text-black font-semibold">Contact</a>
-      </nav>
     </div>
   </header>
+
+  <!-- MENU STICKY -->
+  <nav id="menu" class="menu hidden flex-col md:flex-row md:flex justify-center items-center bg-gray-900 text-gray-100 p-4 space-x-0 md:space-x-6 sticky top-0 z-20">
+    <a href="#à-propos-de-nous" class="hover:text-yellow-400 font-semibold py-2 px-4">À propos</a>
+    <a href="#bureau" class="hover:text-yellow-400 font-semibold py-2 px-4">Bureau</a>
+    <a href="#collaborateurs" class="hover:text-yellow-400 font-semibold py-2 px-4">Collaborateurs</a>
+    <a href="#nous-contacter" class="hover:text-yellow-400 font-semibold py-2 px-4">Contact</a>
+  </nav>
 
   <!-- A PROPOS -->
   <section id="à-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
