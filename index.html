@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpha Master Gaming®</title>
 
-  <!-- Tailwind CSS -->
+  <!-- TAILWIND CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Styles personnalisés -->
+  <!-- STYLES PERSONNALISÉS -->
   <style>
     .menu-toggle {
       display: none;
@@ -55,11 +55,11 @@
     }
   </style>
 
-  <!-- Favicon -->
+  <!-- FAVICON -->
   <link rel="icon" type="image/png"
     href="https://image.noelshack.com/fichiers/2025/34/7/1755990697-logo-essai2.jpg" />
 
-  <!-- Script menu responsive -->
+  <!-- SCRIPT MENU RESPONSIVE -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
@@ -87,7 +87,7 @@
         La passion, la compétition, l’excellence
       </p>
 
-      <!-- Bouton menu mobile -->
+      <!-- BOUTON MENU MOBILE -->
       <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <!-- Dégradé + image en arrière-plan -->
+    <!-- DÉGRADÉ + IMAGE EN ARRIERE PLAN -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-r from-yellow-700/70 to-orange-900/70"></div>
       <img src="https://image.noelshack.com/fichiers/2025/34/6/1755961275-960-x-540-px-2.png" alt="Header image"
@@ -105,7 +105,7 @@
     </div>
   </header>
 
-    <!-- Section vidéo -->
+    <!-- SECTION VIDÉO -->
     <section class="bg-gray-900 text-white py-16 px-6">
   <div class="max-w-6xl mx-auto">
     
@@ -314,7 +314,7 @@
     Rejoignez-nous sur nos réseaux ou contactez-nous directement :
   </p>
 
-  <!-- Réseaux sociaux -->
+  <!-- RÉSEAUX SOCIAUX -->
   <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
     <a href="https://x.com/Alpha_M_Gaming/" target="_blank"
       class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
@@ -341,7 +341,7 @@
     </a>
   </div>
 
-  <!-- Message de contact par mail -->
+  <!-- MESSAGE DE CONTACT PAR MAIL -->
   <p class="mt-10 text-gray-300 text-lg">
     Nous contacter par mail :
     <a href="mailto:direction@amg-asso.com" class="text-yellow-400 hover:text-yellow-300 font-semibold">
@@ -365,6 +365,73 @@
   </p>
   <p class="text-black font-bold">Site codé et imaginé par DADA.</p>
 </footer>
+
+<style>
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation-name: fall;
+    animation-timing-function: linear;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(100vh); }
+  }
+</style>
+
+  <!-- SAISON ÉTÉ - ANIMATION -->
+<style>
+  .summer-leaf {
+    position: fixed;
+    top: -50px;
+    font-size: 1em;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation-name: float;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0, -50px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(50px, 100vh) rotate(180deg);
+      opacity: 0.9;
+    }
+  }
+</style>
+
+<script>
+  const numberOfSummerLeaves = 30;
+  const summerLeafTypes = ['🌿', '🍃', '🌱']; // feuilles vertes
+
+  function createSummerLeaf() {
+    const leaf = document.createElement('div');
+    leaf.className = 'summer-leaf';
+    leaf.textContent = summerLeafTypes[Math.floor(Math.random() * summerLeafTypes.length)];
+    leaf.style.left = Math.random() * window.innerWidth + 'px';
+    leaf.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    leaf.style.animationDuration = (Math.random() * 7 + 5) + 's';
+    leaf.style.animationDelay = Math.random() * 5 + 's';
+    document.body.appendChild(leaf);
+  }
+
+  for (let i = 0; i < numberOfSummerLeaves; i++) {
+    createSummerLeaf();
+  }
+</script>
 
 </body>
 </html>
