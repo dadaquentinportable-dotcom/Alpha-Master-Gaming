@@ -65,19 +65,27 @@
 <body class="bg-gray-950 text-gray-100 font-sans">
 
   <!-- HERO / HEADER -->
-  <header class="hero p-6 text-center relative text-gray-100">
-    <div class="relative z-10">
-      <h1 class="text-5xl md:text-6xl font-extrabold uppercase tracking-widest">Alpha Master Gaming®</h1>
-      <p class="mt-2 text-lg md:text-2xl font-light">Structure Officielle eSport</p>
-      <p class="mt-2 text-yellow-200 italic font-semibold">La passion, la compétition, l’excellence</p>
+  <header class="hero relative text-gray-100 flex items-center justify-center min-h-[500px] text-center p-6">
+  <div class="relative z-10 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold uppercase tracking-widest">Alpha Master Gaming®</h1>
+    <p class="mt-2 text-lg md:text-2xl font-light">Structure eSport depuis 2024</p>
+    <p class="mt-2 text-yellow-200 italic font-semibold">La passion, la compétition, l’excellence</p>
 
-      <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </div>
+    <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
     </div>
-  </header>
+  </div>
+
+  <!-- Dégradé + image en arrière-plan -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-yellow-700/70 to-orange-900/70"></div>
+    <img src="https://image.noelshack.com/fichiers/2025/34/6/1755961275-960-x-540-px-2.png" 
+         alt="Header image" 
+         class="w-full h-full object-cover">
+  </div>
+</header>
 
   <!-- MENU STICKY -->
   <nav id="menu" class="menu hidden flex-col md:flex-row md:flex justify-center items-center bg-gray-900 text-gray-100 p-4 space-x-0 md:space-x-6 sticky top-0 z-20">
