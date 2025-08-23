@@ -131,48 +131,86 @@
   </section>
 
   <!-- MEMBRES DU BUREAU -->
-  <section id="bureau" class="py-16 px-6 bg-gray-900">
-    <h2 class="text-3xl font-bold text-center text-yellow-500">MEMBRES DU BUREAU</h2>
+<section id="bureau" class="py-16 px-6 bg-gray-900">
+  <h2 class="text-3xl font-bold text-center text-yellow-500">MEMBRES DU BUREAU</h2>
 
-    <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+  <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
 
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover">
-        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983155-louvealpha.jpg" alt="Louve Alpha"
-          class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-        <h3 class="mt-4 text-xl font-bold">Louve Alpha</h3>
-        <p class="text-yellow-400 font-semibold">Présidente</p>
-      </div>
-
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover">
-        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983141-dada.jpg" alt="DADA"
-          class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-        <h3 class="mt-4 text-xl font-bold">DADA</h3>
-        <p class="text-yellow-400 font-semibold">Développeur</p>
-      </div>
-
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover">
-        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Evoxx"
-          class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-        <h3 class="mt-4 text-xl font-bold">Evoxx</h3>
-        <p class="text-yellow-400 font-semibold">Membre</p>
-      </div>
-
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover">
-        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="RyZe99"
-          class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-        <h3 class="mt-4 text-xl font-bold">RyZe99</h3>
-        <p class="text-yellow-400 font-semibold">Membre</p>
-      </div>
-
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover">
-        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Erreur404"
-          class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-        <h3 class="mt-4 text-xl font-bold">Erreur404</h3>
-        <p class="text-yellow-400 font-semibold">Membre</p>
-      </div>
-
+    <!-- Louve Alpha -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+         onclick="openModal('Louve Alpha','Prénom: Audrey','Âge: /','Fonction: Présidente')">
+      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983155-louvealpha.jpg" alt="Louve Alpha"
+        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+      <h3 class="mt-4 text-xl font-bold">Louve Alpha</h3>
+      <p class="text-yellow-400 font-semibold">Présidente</p>
     </div>
-  </section>
+
+    <!-- DADA -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+         onclick="openModal('DADA','Prénom : Quentin','Âge : 30 ans','Fonction : Développeur')">
+      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983141-dada.jpg" alt="DADA"
+        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+      <h3 class="mt-4 text-xl font-bold">DADA</h3>
+      <p class="text-yellow-400 font-semibold">Développeur</p>
+    </div>
+
+    <!-- Evoxx -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+         onclick="openModal('Evoxx','Prénom : /','Âge : /','Fonction : Membre du Bureau')">
+      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Evoxx"
+        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+      <h3 class="mt-4 text-xl font-bold">Evoxx</h3>
+      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+    </div>
+
+    <!-- RyZe99 -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+         onclick="openModal('RyZe99','Prénom : /','Âge : /','Fonction : Membre du Bureau')">
+      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="RyZe99"
+        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+      <h3 class="mt-4 text-xl font-bold">RyZe99</h3>
+      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+    </div>
+
+    <!-- Erreur404 -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+         onclick="openModal('Erreur404','Prénom : /','Âge : /','Fonction : Membre du Bureau')">
+      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Erreur404"
+        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+      <h3 class="mt-4 text-xl font-bold">Erreur404</h3>
+      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 text-gray-900 relative">
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl">&times;</button>
+    <h3 id="modalName" class="text-2xl font-bold text-center mb-4"></h3>
+    <p id="modalPrenom" class="mb-2"></p>
+    <p id="modalAge" class="mb-2"></p>
+    <p id="modalFonction" class="mb-2"></p>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  function openModal(name, prenom, age, fonction) {
+    document.getElementById("modalName").innerText = name;
+    document.getElementById("modalPrenom").innerText = prenom;
+    document.getElementById("modalAge").innerText = age;
+    document.getElementById("modalFonction").innerText = fonction;
+    document.getElementById("infoModal").classList.remove("hidden");
+    document.getElementById("infoModal").classList.add("flex");
+  }
+
+  function closeModal() {
+    document.getElementById("infoModal").classList.add("hidden");
+    document.getElementById("infoModal").classList.remove("flex");
+  }
+</script>
 
   <!-- COLLABORATEURS -->
 <section id="collaborateurs" class="py-16 px-6 max-w-6xl mx-auto text-center">
@@ -255,8 +293,8 @@
   <!-- Message de contact par mail -->
   <p class="mt-10 text-gray-300 text-lg">
     Nous contacter par mail :
-    <a href="mailto:dadaquentin@outlook.fr" class="text-yellow-400 hover:text-yellow-300 font-semibold">
-      dadaquentin@outlook.fr
+    <a href="mailto:direction@amg-asso.com" class="text-yellow-400 hover:text-yellow-300 font-semibold">
+      direction@amg-asso.com
     </a>
   </p>
 
