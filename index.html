@@ -53,11 +53,43 @@
     .card-hover:hover .img-hover {
       transform: scale(1.1);
     }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+  <!-- ANIMATION -->
+    .summer-leaf {
+      position: fixed;
+      top: -50px;
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+      animation-name: float;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, -50px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(50px, 100vh) rotate(180deg);
+        opacity: 0.9;
+      }
+    }
   </style>
 
   <!-- FAVICON -->
-  <link rel="icon" type="image/png"
-    href="https://image.noelshack.com/fichiers/2025/34/7/1755990697-logo-essai2.jpg" />
+  <link rel="icon" type="image/png" href="https://image.noelshack.com/fichiers/2025/34/7/1755990697-logo-essai2.jpg" />
 
   <!-- SCRIPT MENU RESPONSIVE -->
   <script>
@@ -82,15 +114,14 @@
       <h1 class="text-5xl md:text-6xl font-extrabold uppercase tracking-widest">
         Alpha Master Gaming®
       </h1>
-      <p class="mt-2 text-lg md:text-2xl font-light">Structure eSport depuis 2024</p>
+      <p class="mt-2 text-lg md:text-2xl font-light">Association eSportive depuis 2024</p>
       <p class="mt-2 text-yellow-200 italic font-semibold">
         La passion, la compétition, l’excellence
       </p>
 
       <!-- BOUTON MENU MOBILE -->
       <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -105,163 +136,168 @@
     </div>
   </header>
 
-    <!-- SECTION VIDÉO -->
-    <section class="bg-gray-900 text-white py-16 px-6">
-  <div class="max-w-6xl mx-auto">
-    
-    <!-- Titre centré au-dessus -->
-    <h2 class="text-4xl font-extrabold text-center text-yellow-500 mb-10">
-      NOTRE PRÉSENTATION EN MUSIQUE
-    </h2>
-    
-    <!-- Encadré -->
-    <div class="border-2 border-yellow-500 rounded-2xl shadow-lg p-8">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        
-        <!-- Vidéo YouTube -->
-        <div class="flex justify-center">
-          <iframe 
-            width="560" 
-            height="315" 
-            class="rounded-xl shadow-md"
-            src="https://www.youtube.com/embed/HmRVfuXbt60" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        
-        <!-- Texte à droite -->
-        <div class="text-left">
-          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Découvrez notre univers</h3>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Plongez dans l’esprit Alpha Master Gaming ! Cette vidéo met en lumière notre passion, 
-            nos projets et l’énergie de notre communauté eSport.  
-            Que vous soyez joueur occasionnel ou compétiteur confirmé, 
-            rejoignez-nous et participez à l’aventure AMG.
-          </p>
-        </div>
+  <!-- SECTION VIDÉO -->
+  <section class="bg-gray-900 text-white py-16 px-6">
+    <div class="max-w-6xl mx-auto">
 
+      <!-- Titre centré -->
+      <h2 class="text-4xl font-extrabold text-center text-yellow-500 mb-10">
+        NOTRE PRÉSENTATION EN MUSIQUE
+      </h2>
+
+      <!-- Encadré -->
+      <div class="border-2 border-yellow-500 rounded-2xl shadow-lg p-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+
+          <!-- Vidéo YouTube -->
+          <div class="flex justify-center">
+            <iframe 
+              width="560" 
+              height="315" 
+              class="rounded-xl shadow-md"
+              src="https://www.youtube.com/embed/HmRVfuXbt60" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Texte -->
+          <div class="text-left">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Découvrez notre univers</h3>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              Plongez dans l’esprit Alpha Master Gaming ! Cette vidéo met en lumière notre passion, 
+              nos projets et l’énergie de notre communauté eSport.  
+              Que vous soyez joueur occasionnel ou compétiteur confirmé, 
+              rejoignez-nous et participez à l’aventure AMG.
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- À PROPOS -->
-<section id="a-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
-  <h2 class="text-3xl font-bold text-yellow-500">À PROPOS DE NOUS</h2>
+  <section id="a-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-yellow-500">À PROPOS DE NOUS</h2>
 
-  <p class="mt-4 text-lg text-gray-300">
-    En avril 2024, deux passionnés de gaming, Louve Alpha et JoGoWw, ont décidé de franchir le pas et de donner vie à leur rêve : créer l’Association Alpha Master Gaming. Régie par la loi de 1901 et officiellement reconnue comme club de sport, AMG a pour ambition de briller dans l’univers de l’eSport tout en accompagnant des joueurs de tous horizons vers de nouveaux sommets.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      En avril 2024, deux passionnés de gaming, Louve Alpha et JoGoWw, ont décidé de franchir le pas et de donner vie à leur rêve : créer l’Association Alpha Master Gaming. Régie par la loi de 1901 et officiellement reconnue comme club de sport, AMG a pour ambition de briller dans l’univers de l’eSport tout en accompagnant des joueurs de tous horizons vers de nouveaux sommets.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300">
-    Depuis début juillet 2024, Louve Alpha a pris les rênes de l’association et assure seule la présidence. En tant que fondatrice et présidente, elle guide l’AMG avec passion, détermination et une vision claire : faire de ce club un véritable tremplin pour les joueurs, qu’ils soient novices ou experts.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      Depuis début juillet 2024, Louve Alpha a pris les rênes de l’association et assure seule la présidence. En tant que fondatrice et présidente, elle guide l’AMG avec passion, détermination et une vision claire : faire de ce club un véritable tremplin pour les joueurs, qu’ils soient novices ou experts.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300">
-    Avec ses différents rosters et pôles de jeu, AMG propose bien plus que de simples entraînements. Les membres bénéficient de coaching personnalisé, de stratégies adaptées et de conditions optimales pour progresser et se préparer aux compétitions. FPS, jeux de sport ou multi-gaming : quel que soit votre domaine de prédilection, une place vous attend dans notre équipe.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      Avec ses différents rosters et pôles de jeu, AMG propose bien plus que de simples entraînements. Les membres bénéficient de coaching personnalisé, de stratégies adaptées et de conditions optimales pour progresser et se préparer aux compétitions. FPS, jeux de sport ou multi-gaming : quel que soit votre domaine de prédilection, une place vous attend dans notre équipe.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300">
-    Le club a grandi et s’est structuré. Aujourd’hui, plusieurs responsables et administrateurs assurent une gestion efficace et un suivi renforcé des joueurs. AMG collabore également avec de grandes instances du secteur, telles que la Fédération Française du Jeu Vidéo (FFJV), l’UEAF et France Esport, pour porter des projets ambitieux et contribuer activement au développement de la scène eSport française.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      Le club a grandi et s’est structuré. Aujourd’hui, plusieurs responsables et administrateurs assurent une gestion efficace et un suivi renforcé des joueurs. AMG collabore également avec de grandes instances du secteur, telles que la Fédération Française du Jeu Vidéo (FFJV), l’UEAF et France Esport, pour porter des projets ambitieux et contribuer activement au développement de la scène eSport française.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300">
-    De belles nouveautés sont déjà en place : notre maillot officiel AMG est désormais disponible à la vente via notre partenaire. Des partenariats stratégiques avec SKED et ECL (European Competitive League) enrichissent notre réseau et nos opportunités. Une agence TikTok AMG accompagne les créateurs de contenu et les aide à générer des revenus tout en développant leur audience.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      De belles nouveautés sont déjà en place : notre maillot officiel AMG est désormais disponible à la vente via notre partenaire. Des partenariats stratégiques avec SKED et ECL (European Competitive League) enrichissent notre réseau et nos opportunités. Une agence TikTok AMG accompagne les créateurs de contenu et les aide à générer des revenus tout en développant leur audience.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300">
-    AMG est en pleine expansion et cherche des joueurs motivés, prêts à s’investir dans l’univers compétitif du gaming. Peu importe votre niveau : si vous avez envie de progresser, d’intégrer une équipe soudée et de partager des moments intenses, AMG vous ouvre grand ses portes.
-  </p>
+    <p class="mt-4 text-lg text-gray-300">
+      AMG est en pleine expansion et cherche des joueurs motivés, prêts à s’investir dans l’univers compétitif du gaming. Peu importe votre niveau : si vous avez envie de progresser, d’intégrer une équipe soudée et de partager des moments intenses, AMG vous ouvre grand ses portes.
+    </p>
 
-  <p class="mt-4 text-lg text-gray-300 font-semibold">
-    Rejoignez-nous dès aujourd’hui et atteignons ensemble de nouveaux sommets dans l’eSport.
-  </p>
-</section>
+    <p class="mt-4 text-lg text-gray-300 font-semibold">
+      Rejoignez-nous dès aujourd’hui et atteignons ensemble de nouveaux sommets dans l’eSport.
+    </p>
+  </section>
 
   <!-- MEMBRES DU BUREAU -->
-<section id="bureau" class="py-16 px-6 bg-gray-900">
-  <h2 class="text-3xl font-bold text-center text-yellow-500">MEMBRES DU BUREAU</h2>
+  <section id="bureau" class="py-16 px-6 bg-gray-900">
+    <h2 class="text-3xl font-bold text-center text-yellow-500">MEMBRES DU BUREAU</h2>
 
-  <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+    <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
 
-    <!-- Louve Alpha -->
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
-         onclick="openModal('Louve Alpha','Prénom : Audrey','Âge : /','Fonction : Présidente')">
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983155-louvealpha.jpg" alt="Louve Alpha"
-        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-      <h3 class="mt-4 text-xl font-bold">Louve Alpha</h3>
-      <p class="text-yellow-400 font-semibold">Présidente</p>
+      <!-- Louve Alpha -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('Louve Alpha','Prénom : Audrey','Âge : /','Fonction : Présidente')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983155-louvealpha.jpg" 
+             alt="Louve Alpha"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">Louve Alpha</h3>
+        <p class="text-yellow-400 font-semibold">Présidente</p>
+      </div>
+
+      <!-- DADA -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('DADA','Prénom : Quentin','Âge : 30 ans','Fonction : Développeur')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983141-dada.jpg" 
+             alt="DADA"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">DADA</h3>
+        <p class="text-yellow-400 font-semibold">Développeur</p>
+      </div>
+
+      <!-- Evoxx -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('Evoxx','Prénom : Dylan','Âge : /','Fonction : Membre du Bureau')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" 
+             alt="Evoxx"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">Evoxx</h3>
+        <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+      </div>
+
+      <!-- RyZe99 -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('RyZe99','Prénom : Anthony','Âge : /','Fonction : Membre du Bureau')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" 
+             alt="RyZe99"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">RyZe99</h3>
+        <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+      </div>
+
+      <!-- Erreur404 -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('Erreur404','Prénom : Redouane','Âge : /','Fonction : Membre du Bureau')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" 
+             alt="Erreur404"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">Erreur404</h3>
+        <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
+      </div>
+
     </div>
+  </section>
 
-    <!-- DADA -->
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
-         onclick="openModal('DADA','Prénom : Quentin','Âge : 30 ans','Fonction : Développeur')">
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983141-dada.jpg" alt="DADA"
-        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-      <h3 class="mt-4 text-xl font-bold">DADA</h3>
-      <p class="text-yellow-400 font-semibold">Développeur</p>
+  <!-- MODAL -->
+  <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 text-gray-900 relative">
+      <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl">&times;</button>
+      <h3 id="modalName" class="text-2xl font-bold text-center mb-4"></h3>
+      <p id="modalPrenom" class="mb-2"></p>
+      <p id="modalAge" class="mb-2"></p>
+      <p id="modalFonction" class="mb-2"></p>
     </div>
-
-    <!-- Evoxx -->
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
-         onclick="openModal('Evoxx','Prénom : Dylan','Âge : /','Fonction : Membre du Bureau')">
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Evoxx"
-        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-      <h3 class="mt-4 text-xl font-bold">Evoxx</h3>
-      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
-    </div>
-
-    <!-- RyZe99 -->
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
-         onclick="openModal('RyZe99','Prénom : Anthony','Âge : /','Fonction : Membre du Bureau')">
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="RyZe99"
-        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-      <h3 class="mt-4 text-xl font-bold">RyZe99</h3>
-      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
-    </div>
-
-    <!-- Erreur404 -->
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
-         onclick="openModal('Erreur404','Prénom : Redouane','Âge : /','Fonction : Membre du Bureau')">
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" alt="Erreur404"
-        class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
-      <h3 class="mt-4 text-xl font-bold">Erreur404</h3>
-      <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
-    </div>
-
   </div>
-</section>
 
-<!-- MODAL -->
-<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 text-gray-900 relative">
-    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl">&times;</button>
-    <h3 id="modalName" class="text-2xl font-bold text-center mb-4"></h3>
-    <p id="modalPrenom" class="mb-2"></p>
-    <p id="modalAge" class="mb-2"></p>
-    <p id="modalFonction" class="mb-2"></p>
-  </div>
-</div>
+  <!-- SCRIPT MODAL -->
+  <script>
+    function openModal(name, prenom, age, fonction) {
+      document.getElementById("modalName").innerText = name;
+      document.getElementById("modalPrenom").innerText = prenom;
+      document.getElementById("modalAge").innerText = age;
+      document.getElementById("modalFonction").innerText = fonction;
+      document.getElementById("infoModal").classList.remove("hidden");
+      document.getElementById("infoModal").classList.add("flex");
+    }
 
-<!-- SCRIPT -->
-<script>
-  function openModal(name, prenom, age, fonction) {
-    document.getElementById("modalName").innerText = name;
-    document.getElementById("modalPrenom").innerText = prenom;
-    document.getElementById("modalAge").innerText = age;
-    document.getElementById("modalFonction").innerText = fonction;
-    document.getElementById("infoModal").classList.remove("hidden");
-    document.getElementById("infoModal").classList.add("flex");
-  }
-
-  function closeModal() {
-    document.getElementById("infoModal").classList.add("hidden");
-    document.getElementById("infoModal").classList.remove("flex");
-  }
-</script>
+    function closeModal() {
+      document.getElementById("infoModal").classList.add("hidden");
+      document.getElementById("infoModal").classList.remove("flex");
+    }
+  </script>
 
   <!-- COLLABORATEURS -->
 <section id="collaborateurs" class="py-16 px-6 max-w-6xl mx-auto text-center">
@@ -303,128 +339,118 @@
       <h3 class="mt-4 font-bold">ECL</h3>
     </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- CONTACT -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<section id="nous-contacter" class="py-16 px-6 bg-gray-900 text-center">
-  <h2 class="text-3xl font-bold text-yellow-500">NOUS CONTACTER</h2>
-  <p class="mt-4 text-gray-300">
-    Rejoignez-nous sur nos réseaux ou contactez-nous directement :
-  </p>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <section id="nous-contacter" class="py-16 px-6 bg-gray-900 text-center">
+    <h2 class="text-3xl font-bold text-yellow-500">NOUS CONTACTER</h2>
+    <p class="mt-4 text-gray-300">
+      Rejoignez-nous sur nos réseaux ou contactez-nous directement :
+    </p>
 
-  <!-- RÉSEAUX SOCIAUX -->
-  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-    <a href="https://x.com/Alpha_M_Gaming/" target="_blank"
-      class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-      <i data-lucide="twitter" class="w-8 h-8 text-yellow-400"></i>
-      <span class="text-yellow-400 hover:text-white text-lg font-semibold">X</span>
-    </a>
+    <!-- RÉSEAUX SOCIAUX -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <a href="https://x.com/Alpha_M_Gaming/" target="_blank"
+         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+        <i data-lucide="twitter" class="w-8 h-8 text-yellow-400"></i>
+        <span class="text-yellow-400 hover:text-white text-lg font-semibold">X</span>
+      </a>
 
-    <a href="https://www.tiktok.com/@alpha_master_gaming" target="_blank"
-      class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-      <i data-lucide="music-2" class="w-8 h-8 text-yellow-400"></i>
-      <span class="text-yellow-400 hover:text-white text-lg font-semibold">TikTok</span>
-    </a>
+      <a href="https://www.tiktok.com/@alpha_master_gaming" target="_blank"
+         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+        <i data-lucide="music-2" class="w-8 h-8 text-yellow-400"></i>
+        <span class="text-yellow-400 hover:text-white text-lg font-semibold">TikTok</span>
+      </a>
 
-    <a href="https://www.facebook.com/profile.php?id=61573835576956" target="_blank"
-      class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-      <i data-lucide="facebook" class="w-8 h-8 text-yellow-400"></i>
-      <span class="text-yellow-400 hover:text-white text-lg font-semibold">Facebook</span>
-    </a>
+      <a href="https://www.facebook.com/profile.php?id=61573835576956" target="_blank"
+         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+        <i data-lucide="facebook" class="w-8 h-8 text-yellow-400"></i>
+        <span class="text-yellow-400 hover:text-white text-lg font-semibold">Facebook</span>
+      </a>
 
-    <a href="https://discord.gg/amgesport" target="_blank"
-      class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-      <i data-lucide="message-circle" class="w-8 h-8 text-yellow-400"></i>
-      <span class="text-yellow-400 hover:text-white text-lg font-semibold">Discord</span>
-    </a>
-  </div>
+      <a href="https://discord.gg/amgesport" target="_blank"
+         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+        <i data-lucide="message-circle" class="w-8 h-8 text-yellow-400"></i>
+        <span class="text-yellow-400 hover:text-white text-lg font-semibold">Discord</span>
+      </a>
+    </div>
 
-  <!-- MESSAGE DE CONTACT PAR MAIL -->
-  <p class="mt-10 text-gray-300 text-lg">
-    Nous contacter par mail :
-    <a href="mailto:direction@amg-asso.com" class="text-yellow-400 hover:text-yellow-300 font-semibold">
-      direction@amg-asso.com
-    </a>
-  </p>
+    <!-- MESSAGE DE CONTACT PAR MAIL -->
+    <p class="mt-10 text-gray-300 text-lg">
+      Nous contacter par mail :
+      <a href="mailto:direction@amg-asso.com" class="text-yellow-400 hover:text-yellow-300 font-semibold">
+        direction@amg-asso.com
+      </a>
+    </p>
 
-  <script>
-    lucide.createIcons(); // Active les icônes Lucide
-  </script>
-</section>
+    <script>
+      lucide.createIcons();
+    </script>
+  </section>
 
   <!-- FOOTER -->
-<footer class="bg-gradient-to-r from-yellow-600 to-yellow-800 text-center py-6 mt-10 relative">
-  <p class="text-black font-semibold">&copy; 2024-2025 - Association Alpha Master Gaming. Tous droits réservés.</p>
-  <p class="text-black font-semibold">
-    SIREN : 927 786 442 - 
-    <a href="https://api-avis-situation-sirene.insee.fr/identification/pdf/92778644200016" target="_blank" class="underline hover:text-white">
-      Voir l’avis de situation
-    </a>
-  </p>
-  <p class="text-black font-bold">Site codé et imaginé par DADA.</p>
-</footer>
+  <footer class="bg-gradient-to-r from-yellow-600 to-yellow-800 text-center py-6 mt-10 relative">
+    <p class="text-black font-semibold">&copy; 2024-2025 - Association Alpha Master Gaming. Tous droits réservés.</p>
+    <p class="text-black font-semibold">
+      SIREN : 927 786 442 - 
+      <a href="https://api-avis-situation-sirene.insee.fr/identification/pdf/92778644200016" 
+         target="_blank" class="underline hover:text-white">
+        Voir l’avis de situation
+      </a>
+    </p>
+    <p class="text-black font-bold">Site codé et imaginé par DADA.</p>
+  </footer>
 
+  <!-- IMAGE TOMBANTE - SCRIPT -->
 <style>
-  .snowflake {
-    position: fixed;
-    top: -10px;
-    color: white;
-    font-size: 1em;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
+  .summer-leaf {
+    position: absolute;
+    top: -50px; /* pour qu'elles commencent au-dessus de l'écran */
     animation-name: fall;
     animation-timing-function: linear;
+    pointer-events: none;
   }
 
   @keyframes fall {
-    to { transform: translateY(100vh); }
-  }
-</style>
-
-  <!-- SAISON ÉTÉ - ANIMATION -->
-<style>
-  .summer-leaf {
-    position: fixed;
-    top: -50px;
-    font-size: 1em;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
-    animation-name: float;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes float {
     0% {
-      transform: translate(0, -50px) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
+      transform: translateY(0) rotate(0deg);
       opacity: 1;
     }
     100% {
-      transform: translate(50px, 100vh) rotate(180deg);
-      opacity: 0.9;
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.8;
     }
+  }
+
+  .summer-leaf img {
+    display: block;
+    width: 40px;  /* taille raisonnable */
+    height: auto;
   }
 </style>
 
 <script>
   const numberOfSummerLeaves = 30;
-  const summerLeafTypes = ['🌿', '🍃', '🌱']; // feuilles vertes
+  const leafImageURL = 'https://image.noelshack.com/fichiers/2025/35/3/1756308046-c223459d-0920-4732-b26d-10620006685e.png';
 
   function createSummerLeaf() {
     const leaf = document.createElement('div');
     leaf.className = 'summer-leaf';
-    leaf.textContent = summerLeafTypes[Math.floor(Math.random() * summerLeafTypes.length)];
+
+    const img = document.createElement('img');
+    img.src = leafImageURL;
+
+    // Optionnel : taille aléatoire entre 30px et 50px
+    const size = Math.floor(Math.random() * 20 + 30);
+    img.style.width = size + 'px';
+
     leaf.style.left = Math.random() * window.innerWidth + 'px';
-    leaf.style.fontSize = (Math.random() * 20 + 10) + 'px';
     leaf.style.animationDuration = (Math.random() * 7 + 5) + 's';
     leaf.style.animationDelay = Math.random() * 5 + 's';
+
+    leaf.appendChild(img);
     document.body.appendChild(leaf);
   }
 
