@@ -407,9 +407,10 @@
 <style>
   .summer-leaf {
     position: absolute;
-    top: -50px; /* pour qu'elles commencent au-dessus de l'écran */
+    top: -50px; /* commence au-dessus de l'écran */
     animation-name: fall;
     animation-timing-function: linear;
+    animation-iteration-count: infinite; /* boucle infinie */
     pointer-events: none;
   }
 
@@ -419,14 +420,13 @@
       opacity: 1;
     }
     100% {
-      transform: translateY(100vh) rotate(360deg);
+      transform: translateY(var(--pageHeight)) rotate(360deg);
       opacity: 0.8;
     }
   }
 
   .summer-leaf img {
     display: block;
-    width: 40px;  /* taille raisonnable */
     height: auto;
   }
 </style>
@@ -442,12 +442,27 @@
     const img = document.createElement('img');
     img.src = leafImageURL;
 
-    // Optionnel : taille aléatoire entre 30px et 50px
+    // Taille aléatoire entre 30px et 50px
     const size = Math.floor(Math.random() * 20 + 30);
     img.style.width = size + 'px';
 
+    // Position horizontale aléatoire
     leaf.style.left = Math.random() * window.innerWidth + 'px';
-    leaf.style.animationDuration = (Math.random() * 7 + 5) + 's';
+
+    // Hauteur totale de la page
+    const pageHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    leaf.style.setProperty('--pageHeight', pageHeight + 'px');
+
+    // Durée aléatoire pour vitesse réaliste (5 à 12 secondes)
+    const minDuration = 5;
+    const maxDuration = 12;
+    const duration = Math.random() * (maxDuration - minDuration) + minDuration;
+    leaf.style.animationDuration = duration + 's';
+
+    // Petit délai aléatoire pour l’effet naturel
     leaf.style.animationDelay = Math.random() * 5 + 's';
 
     leaf.appendChild(img);
