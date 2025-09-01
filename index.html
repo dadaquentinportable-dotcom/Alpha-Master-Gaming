@@ -136,49 +136,6 @@
     </div>
   </header>
 
-  <!-- SECTION VIDÉO -->
-  <section class="bg-gray-900 text-white py-16 px-6">
-    <div class="max-w-6xl mx-auto">
-
-      <!-- Titre centré -->
-      <h2 class="text-4xl font-extrabold text-center text-yellow-500 mb-10">
-        NOTRE PRÉSENTATION EN MUSIQUE
-      </h2>
-
-      <!-- Encadré -->
-      <div class="border-2 border-yellow-500 rounded-2xl shadow-lg p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-
-          <!-- Vidéo YouTube -->
-          <div class="flex justify-center">
-            <iframe 
-              width="560" 
-              height="315" 
-              class="rounded-xl shadow-md"
-              src="https://www.youtube.com/embed/HmRVfuXbt60" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <!-- Texte -->
-          <div class="text-left">
-            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Découvrez notre univers</h3>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Plongez dans l’esprit Alpha Master Gaming ! Cette vidéo met en lumière notre passion, 
-              nos projets et l’énergie de notre communauté eSport.  
-              Que vous soyez joueur occasionnel ou compétiteur confirmé, 
-              rejoignez-nous et participez à l’aventure AMG.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- À PROPOS -->
   <section id="a-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold text-yellow-500">À PROPOS DE NOUS</h2>
@@ -268,6 +225,16 @@
         <p class="text-yellow-400 font-semibold">Membre du Bureau</p>
       </div>
 
+      <!-- Bloody_Mary -->
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
+           onclick="openModal('Bloody_Mary','Prénom : /','Âge : /','Fonction : Manageuse Générale')">
+        <img src="https://image.noelshack.com/fichiers/2025/34/6/1755983112-nophoto.jpg" 
+             alt="Bloody_Mary"
+             class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
+        <h3 class="mt-4 text-xl font-bold">Bloody_Mary</h3>
+        <p class="text-yellow-400 font-semibold">Manageuse Générale</p>
+      </div>
+
     </div>
   </section>
 
@@ -305,37 +272,39 @@
   <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1375223364746084352/1375223364884500581/logo_pc.png?ex=68aadad0&amp;is=68a98950&amp;hm=de1f21469d858fe46760d3f3fe8c0eb6a945aa5e7c2d0d006c4422da1857a663&amp;" alt="DP7 OPTIMISATION SYSTEM" class="w-40 h-40 mx-auto object-contain img-hover">
-      <h3 class="mt-4 font-bold">DP7</h3>
-    </div>
+  <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732164-dp7.png" 
+       alt="DP7 OPTIMISATION SYSTEM" 
+       class="w-40 h-40 mx-auto object-contain img-hover">
+  <h3 class="mt-4 font-bold">DP7</h3>
+</div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370756101632557076/1370756102047666226/logo_maillot_esport.png?ex=68ab151a&amp;is=68a9c39a&amp;hm=a304766253876342d56b11f80bd7a20a8079abeb0954d0d285f0741b434d410d&amp;" alt="LE MAILLOT ESPORT" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://i.goopics.net/extwoo.png" alt="LE MAILLOT ESPORT" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">LE MAILLOT ESPORT</h3>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370756759035056240/1370756759647420416/logo-franceesports-e1526287130417.png?ex=68ab15b6&amp;is=68a9c436&amp;hm=5d13ac0dbd929b824f99b04c7da3983ee051f069b15c15edff1f170e5f0ab23a&amp;" alt="FRANCE ESPORTS" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732332-france-esports.png" alt="FRANCE ESPORTS" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">FRANCE ESPORTS</h3>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370755965590437949/1370755965925720105/UAEF.png?ex=68ab14f9&amp;is=68a9c379&amp;hm=3a8c53ad87d1ea57aae7e8ca0da5502b3bd905a427518e7c2377cb5228a706d7&amp;" alt="UAEF" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732360-uaef.png" alt="UAEF" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">UAEF</h3>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370756945782243418/1370756945983832205/et5jjwhxsaa8rzw-1593788810.jpg?ex=68ab15e3&amp;is=68a9c463&amp;hm=94c3df4a29e525a041e3a6fff1a1e9957e819d0afc3167ac805fde5e83e65dde&amp;" alt="FÉDÉRATION FRANÇAISE DE JEU VIDÉO" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732380-ffjv.jpg" alt="FÉDÉRATION FRANÇAISE DE JEU VIDÉO" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">FFJV</h3>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370756519263604758/1370756519498616832/Sked.jpg?ex=68ab157d&amp;is=68a9c3fd&amp;hm=6a4bc23ec92cab935b4291197484f9430f71dccf40e8148b86c1db1b394b0907&amp;" alt="SKED" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732409-skef.jpg" alt="SKED" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">SKED</h3>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
-      <img src="https://cdn.discordapp.com/attachments/1370756667616137217/1370756667767263233/RsmJTOII_400x400.jpg?ex=68ab15a1&amp;is=68a9c421&amp;hm=9d1aa845e03fed46d1ab62afcb05574d061254f6295b867839e28b197c148664&amp;" alt="ECL" class="w-40 h-40 mx-auto object-contain img-hover">
+      <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732425-ecl.jpg" alt="ECL" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">ECL</h3>
     </div>
 
