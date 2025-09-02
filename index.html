@@ -443,5 +443,70 @@
   }
 </script>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Widget d'avis flottant</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      min-height: 2000px; /* juste pour test scroll */
+      background-color: #f5f5f5;
+    }
+
+    /* Widget flottant petit et discret */
+    .floating-widget {
+      position: fixed;
+      right: 20px;
+      bottom: 50px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 5px 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 9999;
+      text-align: center;
+    }
+
+    /* Étoiles plus petites */
+    .floating-widget .stars img {
+      width: 30px;
+      margin: 0 2px;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.3s;
+      filter: drop-shadow(0 0 2px #ffd700);
+    }
+
+    .floating-widget .stars img:hover {
+      transform: scale(1.2) rotate(-5deg);
+      filter: drop-shadow(0 0 8px #ffd700) brightness(1.2);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Widget flottant -->
+<div class="floating-widget">
+  <div class="stars">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="1 étoile">
+    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="2 étoiles">
+    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="3 étoiles">
+    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="4 étoiles">
+    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="5 étoiles">
+    </a>
+  </div>
+</div>
+
 </body>
 </html>
