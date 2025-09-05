@@ -8,26 +8,18 @@
   <!-- TAILWIND CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="https://image.noelshack.com/fichiers/2025/34/7/1755990697-logo-essai2.jpg" />
+
   <!-- STYLES PERSONNALISÉS -->
   <style>
-    .menu-toggle {
-      display: none;
-    }
-
+    .menu-toggle { display: none; }
     @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-      }
+      .menu { display: none; flex-direction: column; gap: 1rem; }
+      .menu-toggle { display: block; cursor: pointer; }
     }
 
-    /* Image + dégradé appliqués uniquement au header */
+    /* Header */
     .hero {
       background-image: linear-gradient(to right, rgba(202, 138, 4, 0.65), rgba(146, 64, 14, 0.65)),
         url('https://image.noelshack.com/fichiers/2025/34/6/1755961275-960-x-540-px-2.png');
@@ -36,72 +28,61 @@
       background-repeat: no-repeat;
     }
 
-    /* Effets hover pour un rendu plus pro */
-    .card-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
+    /* Hover effects */
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .card-hover:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
     }
+    .img-hover { transition: transform 0.3s ease; }
+    .card-hover:hover .img-hover { transform: scale(1.1); }
 
-    .img-hover {
-      transition: transform 0.3s ease;
-    }
-
-    .card-hover:hover .img-hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(100vh);
-      }
-    }
-
-  <!-- ANIMATION -->
+    /* Feuilles tombantes */
     .summer-leaf {
-      position: fixed;
+      position: absolute;
       top: -50px;
-      font-size: 1em;
-      user-select: none;
       pointer-events: none;
-      z-index: 9999;
-      animation-name: float;
+      animation-name: fall;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
     }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(var(--pageHeight)) rotate(360deg); opacity: 0.8; }
+    }
+    .summer-leaf img { display: block; height: auto; }
 
-    @keyframes float {
-      0% {
-        transform: translate(0, -50px) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(50px, 100vh) rotate(180deg);
-        opacity: 0.9;
-      }
+    /* Widget flottant */
+    .floating-widget {
+      position: fixed;
+      right: 20px;
+      bottom: 50px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 5px 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 9999;
+      text-align: center;
+    }
+    .floating-widget .stars img {
+      width: 30px;
+      margin: 0 2px;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.3s;
+      filter: drop-shadow(0 0 2px #ffd700);
+    }
+    .floating-widget .stars img:hover {
+      transform: scale(1.2) rotate(-5deg);
+      filter: drop-shadow(0 0 8px #ffd700) brightness(1.2);
     }
   </style>
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="https://image.noelshack.com/fichiers/2025/34/7/1755990697-logo-essai2.jpg" />
 
   <!-- SCRIPT MENU RESPONSIVE -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.classList.add('flex');
-      } else {
-        menu.classList.add('hidden');
-        menu.classList.remove('flex');
-      }
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
     }
   </script>
 </head>
@@ -127,19 +108,12 @@
         </svg>
       </div>
     </div>
-
-    <!-- DÉGRADÉ + IMAGE EN ARRIERE PLAN -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-yellow-700/70 to-orange-900/70"></div>
-      <img src="https://image.noelshack.com/fichiers/2025/34/6/1755961275-960-x-540-px-2.png" alt="Header image"
-        class="w-full h-full object-cover">
-    </div>
   </header>
 
   <!-- À PROPOS -->
   <section id="a-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold text-yellow-500">À PROPOS DE NOUS</h2>
-
+    <!-- (texte conservé tel quel) -->
     <p class="mt-4 text-lg text-gray-300">
       En avril 2024, deux passionnés de gaming, Louve Alpha et JoGoWw, ont décidé de franchir le pas et de donner vie à leur rêve : créer l’Association Alpha Master Gaming. Régie par la loi de 1901 et officiellement reconnue comme club de sport, AMG a pour ambition de briller dans l’univers de l’eSport tout en accompagnant des joueurs de tous horizons vers de nouveaux sommets.
     </p>
@@ -172,9 +146,7 @@
   <!-- MEMBRES DU BUREAU -->
   <section id="bureau" class="py-16 px-6 bg-gray-900">
     <h2 class="text-3xl font-bold text-center text-yellow-500">MEMBRES DU BUREAU</h2>
-
     <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-
       <!-- Louve Alpha -->
       <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center card-hover cursor-pointer"
            onclick="openModal('Louve Alpha','Prénom : Audrey','Âge : /','Fonction : Présidente')">
@@ -233,8 +205,6 @@
              class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-500 img-hover">
         <h3 class="mt-4 text-xl font-bold">Bloody_Mary</h3>
         <p class="text-yellow-400 font-semibold">Manageuse Générale</p>
-      </div>
-
     </div>
   </section>
 
@@ -259,7 +229,6 @@
       document.getElementById("infoModal").classList.remove("hidden");
       document.getElementById("infoModal").classList.add("flex");
     }
-
     function closeModal() {
       document.getElementById("infoModal").classList.add("hidden");
       document.getElementById("infoModal").classList.remove("flex");
@@ -267,11 +236,10 @@
   </script>
 
   <!-- COLLABORATEURS -->
-<section id="collaborateurs" class="py-16 px-6 max-w-6xl mx-auto text-center">
-  <h2 class="text-3xl font-bold text-yellow-500">NOS COLLABORATEURS</h2>
-  <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
+  <section id="collaborateurs" class="py-16 px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-yellow-500">NOS COLLABORATEURS</h2>
+    <div class="grid gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg card-hover">
   <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732164-dp7.png" 
        alt="DP7 OPTIMISATION SYSTEM" 
        class="w-40 h-40 mx-auto object-contain img-hover">
@@ -307,59 +275,64 @@
       <img src="https://image.noelshack.com/fichiers/2025/36/1/1756732425-ecl.jpg" alt="ECL" class="w-40 h-40 mx-auto object-contain img-hover">
       <h3 class="mt-4 font-bold">ECL</h3>
     </div>
-
-    </div>
   </section>
 
-  <!-- CONTACT -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <section id="nous-contacter" class="py-16 px-6 bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold text-yellow-500">NOUS CONTACTER</h2>
-    <p class="mt-4 text-gray-300">
-      Rejoignez-nous sur nos réseaux ou contactez-nous directement :
-    </p>
+  <!-- SECTION RÉSEAUX SOCIAUX + CONTACT MAIL -->
+<section id="reseaux-sociaux" class="py-16 px-6 bg-gray-900 text-center">
+  <h2 class="text-3xl font-bold text-yellow-500">NOS RÉSEAUX SOCIAUX</h2>
 
-    <!-- RÉSEAUX SOCIAUX -->
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-      <a href="https://x.com/Alpha_M_Gaming/" target="_blank"
-         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-        <i data-lucide="twitter" class="w-8 h-8 text-yellow-400"></i>
-        <span class="text-yellow-400 hover:text-white text-lg font-semibold">X</span>
-      </a>
+  <!-- Réseaux sociaux -->
+  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
 
-      <a href="https://www.tiktok.com/@alpha_master_gaming" target="_blank"
-         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-        <i data-lucide="music-2" class="w-8 h-8 text-yellow-400"></i>
-        <span class="text-yellow-400 hover:text-white text-lg font-semibold">TikTok</span>
-      </a>
+    <!-- X -->
+    <a href="https://x.com/Alpha_M_Gaming/" target="_blank"
+       class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+           alt="Logo X"
+           class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+      <span class="text-yellow-400 hover:text-white text-lg font-semibold">X</span>
+    </a>
 
-      <a href="https://www.facebook.com/profile.php?id=61573835576956" target="_blank"
-         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-        <i data-lucide="facebook" class="w-8 h-8 text-yellow-400"></i>
-        <span class="text-yellow-400 hover:text-white text-lg font-semibold">Facebook</span>
-      </a>
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@alpha_master_gaming" target="_blank"
+       class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
+           alt="Logo TikTok"
+           class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+      <span class="text-yellow-400 hover:text-white text-lg font-semibold">TikTok</span>
+    </a>
 
-      <a href="https://discord.gg/amgesport" target="_blank"
-         class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
-        <i data-lucide="message-circle" class="w-8 h-8 text-yellow-400"></i>
-        <span class="text-yellow-400 hover:text-white text-lg font-semibold">Discord</span>
-      </a>
-    </div>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/profile.php?id=61573835576956" target="_blank"
+       class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+           alt="Logo Facebook"
+           class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+      <span class="text-yellow-400 hover:text-white text-lg font-semibold">Facebook</span>
+    </a>
 
-    <!-- MESSAGE DE CONTACT PAR MAIL -->
-    <p class="mt-10 text-gray-300 text-lg">
-      Nous contacter par mail :
-      <a href="mailto:direction@amg-asso.com" class="text-yellow-400 hover:text-yellow-300 font-semibold">
-        direction@amg-asso.com
-      </a>
-    </p>
+    <!-- Discord -->
+    <a href="https://discord.gg/amgesport" target="_blank"
+       class="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-700 bg-gray-800 hover:bg-gray-700 hover:shadow-lg transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg"
+           alt="Logo Discord"
+           class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+      <span class="text-yellow-400 hover:text-white text-lg font-semibold">Discord</span>
+    </a>
 
-    <script>
-      lucide.createIcons();
-    </script>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
+  <!-- Contact mail -->
+  <p class="mt-10 text-gray-300 text-lg">
+    Nous contacter par mail : 
+    <a href="mailto:direction@amg-asso.com" 
+       class="text-yellow-400 hover:text-yellow-300 font-semibold">
+      direction@amg-asso.com
+    </a>
+  </p>
+</section>
+
+    <!-- FOOTER -->
   <footer class="bg-gradient-to-r from-yellow-600 to-yellow-800 text-center py-6 mt-10 relative">
     <p class="text-black font-semibold">&copy; 2024-2025 - Association Alpha Master Gaming. Tous droits réservés.</p>
     <p class="text-black font-semibold">
@@ -372,141 +345,49 @@
     <p class="text-black font-bold">Site codé et imaginé par DADA.</p>
   </footer>
 
-  <!-- IMAGE TOMBANTE - SCRIPT -->
-<style>
-  .summer-leaf {
-    position: absolute;
-    top: -50px; /* commence au-dessus de l'écran */
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; /* boucle infinie */
-    pointer-events: none;
-  }
-
-  @keyframes fall {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
+  <!-- SCRIPT FEUILLES TOMBANTES -->
+  <script>
+    const numberOfSummerLeaves = 30;
+    const leafImageURL = 'https://image.noelshack.com/fichiers/2025/35/3/1756308046-c223459d-0920-4732-b26d-10620006685e.png';
+    function createSummerLeaf() {
+      const leaf = document.createElement('div');
+      leaf.className = 'summer-leaf';
+      const img = document.createElement('img');
+      img.src = leafImageURL;
+      const size = Math.floor(Math.random() * 20 + 30);
+      img.style.width = size + 'px';
+      leaf.style.left = Math.random() * window.innerWidth + 'px';
+      const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      leaf.style.setProperty('--pageHeight', pageHeight + 'px');
+      const duration = Math.random() * (12 - 5) + 5;
+      leaf.style.animationDuration = duration + 's';
+      leaf.style.animationDelay = Math.random() * 5 + 's';
+      leaf.appendChild(img);
+      document.body.appendChild(leaf);
     }
-    100% {
-      transform: translateY(var(--pageHeight)) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
+    for (let i = 0; i < numberOfSummerLeaves; i++) createSummerLeaf();
+  </script>
 
-  .summer-leaf img {
-    display: block;
-    height: auto;
-  }
-</style>
-
-<script>
-  const numberOfSummerLeaves = 30;
-  const leafImageURL = 'https://image.noelshack.com/fichiers/2025/35/3/1756308046-c223459d-0920-4732-b26d-10620006685e.png';
-
-  function createSummerLeaf() {
-    const leaf = document.createElement('div');
-    leaf.className = 'summer-leaf';
-
-    const img = document.createElement('img');
-    img.src = leafImageURL;
-
-    // Taille aléatoire entre 30px et 50px
-    const size = Math.floor(Math.random() * 20 + 30);
-    img.style.width = size + 'px';
-
-    // Position horizontale aléatoire
-    leaf.style.left = Math.random() * window.innerWidth + 'px';
-
-    // Hauteur totale de la page
-    const pageHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight
-    );
-    leaf.style.setProperty('--pageHeight', pageHeight + 'px');
-
-    // Durée aléatoire pour vitesse réaliste (5 à 12 secondes)
-    const minDuration = 5;
-    const maxDuration = 12;
-    const duration = Math.random() * (maxDuration - minDuration) + minDuration;
-    leaf.style.animationDuration = duration + 's';
-
-    // Petit délai aléatoire pour l’effet naturel
-    leaf.style.animationDelay = Math.random() * 5 + 's';
-
-    leaf.appendChild(img);
-    document.body.appendChild(leaf);
-  }
-
-  for (let i = 0; i < numberOfSummerLeaves; i++) {
-    createSummerLeaf();
-  }
-</script>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Widget d'avis flottant</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      min-height: 2000px; /* juste pour test scroll */
-      background-color: #f5f5f5;
-    }
-
-    /* Widget flottant petit et discret */
-    .floating-widget {
-      position: fixed;
-      right: 20px;
-      bottom: 50px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 5px 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 9999;
-      text-align: center;
-    }
-
-    /* Étoiles plus petites */
-    .floating-widget .stars img {
-      width: 30px;
-      margin: 0 2px;
-      cursor: pointer;
-      transition: transform 0.2s, filter 0.3s;
-      filter: drop-shadow(0 0 2px #ffd700);
-    }
-
-    .floating-widget .stars img:hover {
-      transform: scale(1.2) rotate(-5deg);
-      filter: drop-shadow(0 0 8px #ffd700) brightness(1.2);
-    }
-  </style>
-</head>
-<body>
-
-<!-- Widget flottant -->
-<div class="floating-widget">
-  <div class="stars">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="1 étoile">
-    </a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="2 étoiles">
-    </a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="3 étoiles">
-    </a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="4 étoiles">
-    </a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="5 étoiles">
-    </a>
+  <!-- WIDGET FLOTTANT -->
+  <div class="floating-widget">
+    <div class="stars">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="étoile">
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="étoile">
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="étoile">
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="étoile">
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Five-pointed_star.svg" alt="étoile">
+      </a>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
