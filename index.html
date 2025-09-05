@@ -89,26 +89,69 @@
 
 <body class="bg-gray-950 text-gray-100 font-sans">
 
-  <!-- HERO / HEADER -->
-  <header class="hero relative text-gray-100 flex items-center justify-center min-h-[500px] text-center p-6">
-    <div class="relative z-10 max-w-3xl">
-      <h1 class="text-5xl md:text-6xl font-extrabold uppercase tracking-widest">
-        Alpha Master Gaming®
-      </h1>
-      <p class="mt-2 text-lg md:text-2xl font-light">Association eSportive depuis 2024</p>
-      <p class="mt-2 text-yellow-200 italic font-semibold">
-        La passion, la compétition, l’excellence
-      </p>
+  <!-- MENU PRINCIPAL FIXE -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-95 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <a href="#" class="flex items-center">
+      <img src="https://image.noelshack.com/fichiers/2025/36/5/1757091707-c223459d-0920-4732-b26d-10620006685e.png"
+           alt="Logo AMG" class="h-10 w-auto">
+    </a>
 
-      <!-- BOUTON MENU MOBILE -->
-      <div class="menu-toggle mt-4 cursor-pointer" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
+    <!-- Menu desktop -->
+    <ul class="hidden md:flex gap-8 text-gray-100 font-semibold">
+      <li><a href="#a-propos-de-nous" class="hover:text-yellow-400 transition">À propos</a></li>
+      <li><a href="#bureau" class="hover:text-yellow-400 transition">Bureau</a></li>
+      <li><a href="#collaborateurs" class="hover:text-yellow-400 transition">Collaborateurs</a></li>
+      <li><a href="#reseaux-sociaux" class="hover:text-yellow-400 transition">Réseaux</a></li>
+      <li><a href="#" onclick="openMail()" class="hover:text-yellow-400 transition">Contact</a></li>
+    </ul>
+
+    <!-- Bouton menu mobile -->
+    <div class="md:hidden flex items-center">
+      <button onclick="toggleMenu()" class="text-gray-100 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-      </div>
+      </button>
     </div>
-  </header>
+  </div>
+
+  <!-- Menu mobile -->
+  <ul id="menu" class="hidden flex-col gap-4 px-6 pb-6 md:hidden text-gray-100 font-semibold">
+    <li><a href="#a-propos-de-nous" class="block hover:text-yellow-400 transition">À propos</a></li>
+    <li><a href="#bureau" class="block hover:text-yellow-400 transition">Bureau</a></li>
+    <li><a href="#collaborateurs" class="block hover:text-yellow-400 transition">Collaborateurs</a></li>
+    <li><a href="#reseaux-sociaux" class="block hover:text-yellow-400 transition">Réseaux</a></li>
+    <li><a href="#" onclick="openMail()" class="block hover:text-yellow-400 transition">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- HERO / HEADER avec padding pour le menu fixe -->
+<header class="hero relative bg-gray-800 text-gray-100 flex items-center justify-center min-h-[500px] text-center p-6 pt-28">
+  <div class="relative z-10 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold uppercase tracking-widest">
+      Alpha Master Gaming®
+    </h1>
+    <p class="mt-2 text-lg md:text-2xl font-light">Association eSportive depuis 2024</p>
+    <p class="mt-2 text-yellow-200 italic font-semibold">
+      La passion, la compétition, l’excellence
+    </p>
+  </div>
+</header>
+
+  <!-- SCRIPT MENU MOBILE -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  }
+
+  function openMail() {
+    window.open('mailto:direction@amg-asso.com');
+  }
+</script>
 
   <!-- À PROPOS -->
   <section id="a-propos-de-nous" class="py-16 px-6 max-w-4xl mx-auto text-center">
