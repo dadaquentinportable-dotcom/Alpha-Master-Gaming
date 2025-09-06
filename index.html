@@ -414,8 +414,10 @@
     for (let i = 0; i < numberOfSummerLeaves; i++) createSummerLeaf();
   </script>
 
-<!-- WIDGET FLOTTANT AVEC NOTATION PAR ÉTOILES -->
-<div class="fixed right-5 bottom-6 z-50">
+<!-- CONTENEUR FLOTTANT POUR LES WIDGETS -->
+<div class="fixed right-5 bottom-6 z-50 flex flex-col gap-4">
+  
+  <!-- WIDGET FLOTTANT AVEC NOTATION PAR ÉTOILES -->
   <div class="bg-gray-900/90 backdrop-blur-md text-center px-4 py-3 rounded-2xl shadow-lg border border-yellow-500/40">
     <p class="text-sm font-semibold text-yellow-400 mb-2">Notez-nous via Google :</p>
     <div class="flex gap-2 justify-center cursor-pointer" id="rating-stars">
@@ -437,18 +439,28 @@
       </svg>
     </div>
   </div>
+
+  <!-- WIDGET FLOTTANT POUR FAIRE UN DON -->
+  <div class="bg-gray-900/90 backdrop-blur-md text-center px-4 py-3 rounded-2xl shadow-lg border border-yellow-500/40">
+    <p class="text-sm font-semibold text-yellow-400 mb-2">Soutenez-nous avec PayPal :</p>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=35525KDKXE524" target="_blank"
+       class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition-transform hover:scale-105">
+      <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" 
+           alt="PayPal" class="h-5 w-auto">
+      Faire un don
+    </a>
+  </div>
+
 </div>
 
 <script>
+  // SCRIPT POUR LES ÉTOILES
   const stars = document.querySelectorAll("#rating-stars .star");
-  
-  // URL de base du formulaire Google Form
   const googleFormBase = "https://docs.google.com/forms/d/e/1FAIpQLSdlajRkdAs8Fr_941oVR1r-IAY7VGx3E840UTiMXssnD1tTpg/viewform?usp=pp_url&entry.537549972=";
 
   stars.forEach(star => {
     const value = star.dataset.value;
 
-    // Survol
     star.addEventListener("mouseover", () => {
       stars.forEach((s, i) => {
         s.classList.toggle("text-yellow-400", i < value);
@@ -456,13 +468,10 @@
       });
     });
 
-    // Clic → redirection avec note pré-remplie
     star.addEventListener("click", () => {
-      const url = googleFormBase + value;
-      window.open(url, "_blank");
+      window.open(googleFormBase + value, "_blank");
     });
 
-    // Reset si on quitte sans cliquer
     star.addEventListener("mouseleave", () => {
       stars.forEach(s => s.classList.remove("text-yellow-400"));
       stars.forEach(s => s.classList.add("text-gray-400"));
